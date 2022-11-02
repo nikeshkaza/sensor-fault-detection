@@ -1,9 +1,11 @@
+from sensor.components import data_ingestion
 from sensor.constant import training_pipeline
-from sensor.entity.config_entity import TrainingPipelineConfig,DataIngestionConfig
+from sensor.entity.config_entity import TrainingPipelineConfig,DataIngestionConfig,DataValidationConfig
 from sensor.logger import logging
 from sensor.exception import SensorException
 from sensor.entity.artifact_entity import DataIngestionArtifact
 from sensor.components.data_ingestion import DataIngestion
+from sensor.components.data_validation import DataValidation
 import sys
 
 
@@ -27,7 +29,12 @@ class TrainPipeline:
   
     def start_data_validation(self):
         try:
-            pass
+            data_validation_config = DataValidationConfig(training_pipeline_config=self.training_pipeline_config)
+            data_validation = DataValidation(data_ingestion_artifact=data_ingestion_artifact,
+            data_validation_config = data_validation_config
+            )
+            data_validation_artifact = data_validation.initiate_data_validation()
+            return data_validation_artifact
         except Exception as e:
             raise SensorException(e,sys) 
 
