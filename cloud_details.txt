@@ -1,0 +1,36 @@
+1. Login to AWS console.
+
+2. Create IAM user for deployment
+
+	with specific access
+	1. EC2 access : It is virtual machine
+
+	2. S3 bucket: To store artifact and model in s3 bucket - (Azure storage)
+
+	3. ECR: Elastic Container registry
+	To save your docker image in aws
+
+	Description: About the deployment
+
+	1. Build docker image of the source code
+	2. Push your docker image to ECR - (Azure container registry)
+	3. Launch Your EC2 - (Azure VM)
+	4. Pull Your image from ECR in EC2
+	5. Lauch your docker image in EC2
+
+
+
+	Policy:
+	1. AmazonEC2ContainerRegistryFullAccess
+	2. AmazonEC2FullAccess
+	3. AmazonS3FullAccess
+
+
+3. s3 bucket in ap-south-1
+
+
+bucket name: sensor-scania-pipeline
+
+ECR report - 601290184608.dkr.ecr.ap-south-1.amazonaws.com/scania-sensor
+
+EC2 machine ubuntu machine - 
