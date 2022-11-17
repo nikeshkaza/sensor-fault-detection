@@ -1,2 +1,3 @@
 DATABASE_NAME = "Neuron"
-PASSWORD = "OWUCXgQaZkCnE4ht"
+USERNAME="nikeshkaza1"
+PASSWORD = "3dNmnfzBY4UbIBY2"
